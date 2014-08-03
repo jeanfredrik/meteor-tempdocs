@@ -1,0 +1,9 @@
+{
+  "name": "tempdocs",
+  "description": "Adds collection for storing and editing docs before insertion",
+  "homepage": "https://github.com/jeanfredrik/meteor-tempdocs",
+  "author": "jeanfredrik <jeanfredrik@gmail.com>",
+  "version": "0.1.1",
+  "git": "https://github.com/jeanfredrik/meteor-tempdocs.git",
+  "packages": {}
+}
