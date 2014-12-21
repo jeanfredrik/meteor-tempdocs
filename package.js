@@ -1,25 +1,22 @@
 Package.describe({
-	summary: 'Adds collection for storing and editing docs before insertion'
+  name: 'jeanfredrik:tempdocs',
+  summary: 'Handle local temporary documents before insertion with the TempDocs collection',
+  version: '0.1.0',
+  git: 'https://github.com/jeanfredrik/meteor-tempdocs.git'
 });
 
-var both = ["client", "server"];
+Package.onUse(function(api) {
+  api.versionsFrom('1.0');
+  api.use('mongo', 'client');
+  api.use('underscore', 'client');
 
-Package.on_use(function(api, where) {
-	api.use([
-    "meteor",
-    "underscore",
-    "ejson",
-    "mongo-livedata",
-    "minimongo",
-    "deps"
-  ], both);
-	
-	if (api.export) {
-		api.export('TempDocs', both);
-	}
+  api.addFiles('client.js', 'client');
 
-	api.add_files([
-		'lib/helpers.js',
-		'tempdocs.js',
-	], both);
+  api.export('TempDocs');
+});
+
+Package.onTest(function(api) {
+  api.use('tinytest');
+  api.use('jeanfredrik:tempdocs');
+  api.addFiles('tests.js');
 });
