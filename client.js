@@ -3,9 +3,21 @@ var _transform = function(doc) {
 }
 
 var collection = new Mongo.Collection(null);
-TempDocs = {};
+TempDocs = new Mongo.Collection(null);
 
 var _options = {};
+
+TempDocs.deny({
+	'insert': function() {
+		return true;
+	},
+	'update': function() {
+		return true;
+	},
+	'remove': function() {
+		return true;
+	},
+})
 
 TempDocs.options = function(selector) {
 	if(!_.isString(selector)) throw 'Selector must be a document _id';
