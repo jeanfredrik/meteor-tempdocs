@@ -1,7 +1,7 @@
 Package.describe({
   name: 'jeanfredrik:tempdocs',
   summary: 'Handle local temporary documents before insertion with the TempDocs collection',
-  version: '0.1.0',
+  version: '0.1.1',
   git: 'https://github.com/jeanfredrik/meteor-tempdocs.git'
 });
 
